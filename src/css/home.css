@@ -4,7 +4,7 @@ body {
 }
 
 :root {
-    --darkColor: #15192a;
+    --darkColor: rebeccapurple;
     --lightColor: white;
     --warningColor: red;
 
@@ -16,11 +16,10 @@ body {
         padding: .5em 2em;
         text-transform: uppercase;
         cursor: pointer;
-        font-size: 14px;
+        font-size: 10px;
+        font-family: Tahoma;
         border-bottom: 5px solid var(--lightColor)
-    }
-
-    ;
+    };
 }
 
 .btn {

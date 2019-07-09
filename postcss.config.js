@@ -8,7 +8,8 @@ module.exports = {
 				autoprefixer: {
 					grid: false
 				}
-			}
+            },
+            customProperties: false
 		})
     ]
 }

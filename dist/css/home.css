@@ -11,7 +11,8 @@ body {
   padding: .5em 2em;
   text-transform: uppercase;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 10px;
+  font-family: Tahoma;
   border-bottom: 5px solid white;
 }
 
@@ -47,7 +48,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr 1fr;
-    background: #15192a;
+    background: #639;
     color: white;
     padding: 1em;
     -webkit-box-sizing: border-box;

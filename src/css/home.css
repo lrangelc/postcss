@@ -20,7 +20,10 @@
 
 body {
     margin: 0;
-    font-family: 'Lato', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
+    /* font-family: system-ui; */
+    /* Plan B: */
+    font-family: system-ui,'Lato';
 }
 
 .btn {

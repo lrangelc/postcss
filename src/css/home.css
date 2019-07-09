@@ -40,6 +40,7 @@ body {
     grid-template-rows: 1fr 150px;
     grid-template-areas: "sidebar primary"
         "sidebar featuring";
+    background: yellowgreen;
 }
 
 .home-sidebar {
@@ -59,12 +60,14 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr 1fr;
-    background: var(--darkColor);
     color: white;
     padding: 1em;
     box-sizing: border-box;
     height: 100vh;
     overflow: auto;
+    /* background: var(--darkColor); */
+    /* background: color(rebeccapurple alpha(30%) contrast(50%)); */
+    background: hwb(200,0%,0%,1);
 }
 
 /*Logo*/

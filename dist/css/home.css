@@ -147,7 +147,11 @@ body {
     color: white;
 }
 
-.myPlaylist-item a {
+
+
+/* NESTING */
+/* -------------------------> */
+/* .myPlaylist-item a {
     color: white;
     text-decoration: none;
     font-size: .8em;
@@ -162,7 +166,25 @@ body {
 
 .myPlaylist-item a:hover {
     text-decoration: underline;
+} */
+
+.myPlaylist-item a {
+    color: white;
+    text-decoration: none;
+    font-size: .8em;
+    display: block;
+    margin-bottom: 7px;
 }
+
+.myPlaylist-item a:hover {
+    text-decoration: underline;
+}
+
+.myPlaylist-item:last-child a {
+    font-size: 30px;
+}
+/* NESTING */
+/* -------------------------< */
 
 /*playlistFriends*/
 

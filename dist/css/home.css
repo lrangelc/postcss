@@ -30,6 +30,35 @@ body {
     background: var(--warningColor);
 }
 
+.checkbox-label,
+.radio-label {
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    padding: 3px 7px;
+    border: 1px solid rgb(230, 0, 0);
+    border-bottom: 3px solid red;
+    color: gray;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.checkbox-label:hover,
+.radio-label:hover,
+.checkbox-label:active,
+.radio-label:active {
+    background: red;
+    color: white;
+}
+
+.checkbox:checked + .primaryPlaylist-list {
+    display: none;
+}
+
 /*home layout*/
 .home {
     background: var(--lightColor);

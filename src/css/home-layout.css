@@ -1,0 +1,33 @@
+/*home layout*/
+.home {
+    background: var(--lightColor);
+    display: grid;
+    height: calc(var(--viewPortH) * 2);
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: 1fr 150px;
+    grid-template-areas: "sidebar primary"
+        "sidebar featuring";
+    background: yellowgreen;
+}
+
+.home-sidebar {
+    grid-area: sidebar;
+}
+
+.home-primary {
+    display: grid;
+    grid-template-areas: "search user"
+        "list list";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 300px 1fr;
+    padding: 10px;
+    overflow: auto;
+}
+
+/* .home-primary {
+    grid-area: primary;
+} */
+
+.home-featuring {
+    grid-area: featuring;
+}

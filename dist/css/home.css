@@ -1,10 +1,3 @@
-:root {
-    --darkColor: #639;
-    --lightColor: white;
-    --warningColor: red;
-    --viewPortH: 50vh;
-}
-
 body {
     margin: 0;
     /* font-family: 'Lato', sans-serif; */
@@ -12,24 +5,94 @@ body {
     /* Plan B: */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue,'Lato';
 }
-
-.btn {
-  border: 1px solid var(--lightColor);
-  border-radius: 5px;
-  background: var(--darkColor);
-  color: var(--lightColor);
-  padding: .5em 2em;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-size: 10px;
-  font-family: Tahoma;
-  border-bottom: 5px solid var(--lightColor);
+.featuring {
+    background: -webkit-gradient(linear, left top, right top, from(#ff0000), to(#ff458b));
+    background: linear-gradient(to right, #ff0000, #ff458b);
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-left: 100px;
+    color: white;
 }
-
+.featuring-image {
+    margin-right: 20px;
+}
+.featuring-title {
+    margin: 10px;
+}
+.featuring-album {
+    font-size: 1.3em;
+    margin: 10px;
+}
+/*home layout*/
+.home {
+    background: var(--lightColor);
+    display: grid;
+    height: calc(var(--viewPortH) * 2);
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: 1fr 150px;
+    grid-template-areas: "sidebar primary"
+        "sidebar featuring";
+    background: yellowgreen;
+}
+.home-sidebar {
+    grid-area: sidebar;
+}
+.home-primary {
+    display: grid;
+    grid-template-areas: "search user"
+        "list list";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 300px 1fr;
+    padding: 10px;
+    overflow: auto;
+}
+/* .home-primary {
+    grid-area: primary;
+} */
+.home-featuring {
+    grid-area: featuring;
+}
+/*Sidebar*/
+.sidebar {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    color: white;
+    padding: 1em;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100vh;
+    overflow: auto;
+    /* background: var(--darkColor); */
+    /* background: color(rebeccapurple alpha(30%) contrast(50%)); */
+    background: rgb(0, 170, 255);
+}
+/*Logo*/
+.logo {
+    width: calc(100% - 75px);
+    /* centrar imagen */
+    margin: 0 auto;
+    /* background: blue; */
+    /* background-image: image-set({url de la imagen} {densidad}); */
+    background-image: url('../../src/images/platzi-video.png');
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.logo-image {
+    margin: 0;
+}
+.logo-image img {
+    max-width: 100%;
+}
+.btn {
+    @apply --button;
+}
 .btn.warning {
     background: var(--warningColor);
 }
-
 .checkbox-label,
 .radio-label {
     cursor: pointer;
@@ -46,7 +109,6 @@ body {
     margin-bottom: 10px;
     display: inline-block;
 }
-
 .checkbox-label:hover,
 .radio-label:hover,
 .checkbox-label:active,
@@ -54,101 +116,13 @@ body {
     background: red;
     color: white;
 }
-
 .checkbox:checked + .primaryPlaylist-list {
     display: none;
 }
-
-/*home layout*/
-.home {
-    background: var(--lightColor);
-    display: grid;
-    height: calc(var(--viewPortH) * 2);
-    grid-template-columns: 350px 1fr;
-    grid-template-rows: 1fr 150px;
-    grid-template-areas: "sidebar primary"
-        "sidebar featuring";
-    background: yellowgreen;
-}
-
-.home-sidebar {
-    grid-area: sidebar;
-}
-
-.home-primary {
-    grid-area: primary;
-}
-
-.home-featuring {
-    grid-area: featuring;
-}
-
-/*Sidebar*/
-.sidebar {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr 1fr;
-    color: white;
-    padding: 1em;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    height: 100vh;
-    overflow: auto;
-    /* background: var(--darkColor); */
-    /* background: color(rebeccapurple alpha(30%) contrast(50%)); */
-    background: rgb(0, 170, 255);
-}
-
-/*Logo*/
-.logo {
-    width: calc(100% - 75px);
-    /* centrar imagen */
-    margin: 0 auto;
-    /* background: blue; */
-    /* background-image: image-set({url de la imagen} {densidad}); */
-    background-image: url('../../src/images/platzi-video.png');
-    height: 40px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.logo-image {
-    margin: 0;
-}
-
-.logo-image img {
-    max-width: 100%;
-}
-
 .sidebarPlaylist {
     overflow: auto;
 }
-
 /*myPlaylist*/
-
-.myPlaylist {
-    padding: 0 20px;
-}
-
-.myPlaylist :link:hover,.myPlaylist :visited:hover {
-    color: rgb(230, 204, 179);
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-}
-
-.myPlaylist-item:last-child, .myPlaylist-item:nth-of-type(3), .myPlaylist-item:first-child {
-    background: rgb(255, 102, 128);
-    color: black;
-}
-
-.myPlaylist-item:not(:last-child):not(:nth-of-type(3)):not(:first-child) {
-    background: rgb(102, 102, 255);
-    color: white;
-}
-
-
-
 /* NESTING */
 /* -------------------------> */
 /* .myPlaylist-item a {
@@ -167,7 +141,16 @@ body {
 .myPlaylist-item a:hover {
     text-decoration: underline;
 } */
-
+/* NESTING */
+/* -------------------------< */
+.myPlaylist {
+    padding: 0 20px;
+}
+.myPlaylist :link:hover,.myPlaylist :visited:hover {
+    color: rgb(230, 204, 179);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+}
 .myPlaylist-item a {
     color: white;
     text-decoration: none;
@@ -175,33 +158,32 @@ body {
     display: block;
     margin-bottom: 7px;
 }
-
 .myPlaylist-item a:hover {
     text-decoration: underline;
 }
-
 .myPlaylist-item:last-child a {
     font-size: 30px;
 }
-/* NESTING */
-/* -------------------------< */
-
+.myPlaylist-item:last-child, .myPlaylist-item:nth-of-type(3), .myPlaylist-item:first-child {
+    background: rgb(255, 102, 128);
+    color: black;
+}
+.myPlaylist-item:not(:last-child):not(:nth-of-type(3)):not(:first-child) {
+    background: rgb(102, 102, 255);
+    color: white;
+}
 /*playlistFriends*/
-
 .playlistFriends {
     padding: 0;
 }
-
 .playlistFriends-item {
     color: white;
 }
-
 .playlistFriends-item {
     display: flex;
     margin-bottom: 7px;
     font-size: .8em;
 }
-
 .playlistFriends-item a {
     /* autoprefixer: on */
     display: inline-flex;
@@ -209,38 +191,35 @@ body {
     color: white;
     text-decoration: none;
 }
-
 .playlistFriends-item:hover a {
     text-decoration: underline;
 }
-
 .playlistFriends-item img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
     margin-right: 10px;
 }
-
 .playlistFriends-item span {
     display: inline-block;
 }
-
-
-.home-primary {
-    display: grid;
-    grid-template-areas: "search user"
-        "list list";
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 300px 1fr;
-    padding: 10px;
-    overflow: auto;
+.user p {
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    margin: 0;
 }
-
-
+.user img {
+    width: 45px;
+    height: 45px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
 .search {
     grid-area: search;
 }
-
 .search input {
     background: #f0f0f0;
     font-family: "Lato";
@@ -255,120 +234,60 @@ body {
             box-sizing: border-box;
     ;
 }
-
 .primary-user {
     justify-self: end;
 }
-
-.user p {
-    display: flex;
-    align-items: center;
-    font-weight: 300;
-    margin: 0;
-}
-
-.user img {
-    width: 45px;
-    height: 45px;
-    -o-object-fit: cover;
-       object-fit: cover;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
 .primary-list {
     grid-area: list;
     overflow: auto;
 }
-
 .primaryPlaylist-topic {
     margin: 15px 0 0;
     color: #888B8E;
     font-size: 14px;
     font-weight: 300;
 }
-
 .primaryPlaylist-title {
     margin: 0 0 15px;
     color: #3F546C;
     font-size: 20px;
     font-weight: 400;
 }
-
 .primaryPlaylist-list {
     display: flex;
     overflow: auto;
 }
-
 .primaryPlaylist-list .primaryPlaylistItem {
     margin-right: 10px;
 }
-
 .primaryPlaylistItem {
     /*border: 1px solid blue;*/
 }
-
 .primaryPlaylistItem-image {}
-
 .primaryPlaylistItem img {
     width: 250px;
     height: 180px;
     -o-object-fit: cover;
        object-fit: cover;
 }
-
 .primaryPlaylistItem-title {
     margin: 5px 0;
     color: #44546B;
     font-size: 14px;
     font-weight: normal;
 }
-
-
-.featuring {
-    background: -webkit-gradient(linear, left top, right top, from(#ff0000), to(#ff458b));
-    background: linear-gradient(to right, #ff0000, #ff458b);
-    display: flex;
-    height: 100%;
-    align-items: center;
-    padding-left: 100px;
-    color: white;
-}
-
-.featuring-image {
-    margin-right: 20px;
-}
-
-.featuring-title {
-    margin: 10px;
-}
-
-.featuring-album {
-    font-size: 1.3em;
-    margin: 10px;
-}
-
-/* @media screen and (max-width: 768px)
-{
-    body {
-        border: 10px solid blue;
-    }
-} */
-
 @media screen and (min-width: 1024px)
 {
     body {
         border: 10px solid yellow;
     }
 }
-
 @media screen and (max-width: 1023px)
 {
     body {
         border: 10px solid black;
     }
 }
-
 @media screen and (max-width: 767px)
 {
     body {
@@ -383,7 +302,6 @@ body {
                             "featuring";
     }
 }
-
 @media screen and (max-width: 400px)
 {
     body {
@@ -398,13 +316,11 @@ body {
                             "featuring";
     }
 }
-
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 .logo {
     background-image: url('../../src/images/platzi-video-2x.png');
 }
 }
-
 @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
 .logo {
     background-image: url('../../src/images/platzi-video-3x.png');

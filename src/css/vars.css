@@ -1,0 +1,26 @@
+:root {
+    --darkColor: rebeccapurple;
+    --lightColor: white;
+    --warningColor: red;
+
+    --button: {
+        border: 1px solid var(--lightColor);
+        border-radius: 5px;
+        background: var(--darkColor);
+        color: var(--lightColor);
+        padding: .5em 2em;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 10px;
+        font-family: Tahoma;
+        border-bottom: 5px solid var(--lightColor);
+    };
+    --viewPortH: 50vh;
+}
+
+/* @media screen and (max-width: 768px)
+{
+    body {
+        border: 10px solid blue;
+    }
+} */

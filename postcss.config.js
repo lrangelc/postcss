@@ -3,6 +3,7 @@ module.exports = {
         // require('autoprefixer')({
         //     grid:false
         // }),
+        require("postcss-import"),
         require('postcss-cssnext')({
 			features: {
 				autoprefixer: {

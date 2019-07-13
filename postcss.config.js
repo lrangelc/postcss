@@ -3,7 +3,8 @@ module.exports = {
         // require('autoprefixer')({
         //     grid:false
         // }),
-        require("postcss-import"),
+        require('postcss-import'),
+        require('postcss-font-magician'),
         require('postcss-cssnext')({
 			features: {
 				autoprefixer: {

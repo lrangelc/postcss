@@ -13,6 +13,32 @@
 @import './primary-playlistItem.css';
 @import './media.css';
 
+:--checkeable {
+    cursor: pointer;
+    user-select: none;
+    padding: 3px 7px;
+    border: 1px solid color(red b(10%));
+    border-bottom: 3px solid red;
+    color: gray;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+:--checkeable:--hightlight {
+    background: red;
+    color: white;
+}
+
+.checkbox:checked + .primaryPlaylist-list {
+    display: none;
+}
+
+.sidebarPlaylist {
+    overflow: auto;
+}
+
 @custom-media --large screen and (width >= 1024px);
 @custom-media --medium screen and (width < 1024px);
 @custom-media --small screen and (width < 768px);

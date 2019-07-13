@@ -3,7 +3,11 @@ module.exports = {
         // require('autoprefixer')({
         //     grid:false
         // }),
-        require('postcss-import'),
+        require('postcss-import')({
+            plugins: [
+              require("stylelint")({ /* your options */ })
+            ]
+          }),
         require('postcss-font-magician'),
         require('postcss-cssnext')({
 			features: {
